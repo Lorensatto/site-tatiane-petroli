@@ -21,3 +21,18 @@ if(form){
  }).catch(()=>{const results=document.querySelector('#results');if(results)results.innerHTML='<p>Não foi possível carregar os imóveis. Tente atualizar a página.</p>'});
 }
 const photo=document.querySelector('#main-photo');if(photo)document.querySelectorAll('[data-photo]').forEach(btn=>btn.addEventListener('click',()=>{photo.src=btn.dataset.photo;document.querySelectorAll('.thumb').forEach(x=>x.classList.toggle('selected',x===btn));}));
+const exclusiveTrack=document.querySelector('.exclusive-track');
+if(exclusiveTrack){
+ const previous=document.querySelector('.exclusive-prev');
+ const next=document.querySelector('.exclusive-next');
+ const update=()=>{
+  previous.disabled=exclusiveTrack.scrollLeft<3;
+  next.disabled=exclusiveTrack.scrollLeft+exclusiveTrack.clientWidth>=exclusiveTrack.scrollWidth-3;
+ };
+ const step=()=>exclusiveTrack.querySelector('.card').getBoundingClientRect().width+22;
+ previous.addEventListener('click',()=>exclusiveTrack.scrollBy({left:-step(),behavior:'smooth'}));
+ next.addEventListener('click',()=>exclusiveTrack.scrollBy({left:step(),behavior:'smooth'}));
+ exclusiveTrack.addEventListener('scroll',update,{passive:true});
+ window.addEventListener('resize',update);
+ update();
+}
