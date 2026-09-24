@@ -37,3 +37,6 @@
 @media(max-width:1350px){.exclusive-section{margin-left:5vw;margin-right:5vw}}
 @media(max-width:850px){.exclusive-track .card{flex-basis:calc((100% - 22px)/2)}}
 @media(max-width:600px){.exclusive-section{padding:70px 0 80px;margin:0 18px}.exclusive-heading h2{font-size:28px}.exclusive-controls{display:none}.exclusive-track{margin-right:-18px;padding-right:18px}.exclusive-track .card{flex-basis:min(82vw,340px)}}
+
+/* O filtro da home agora vem após as gestões exclusivas. */
+.exclusive-section + .search-wrap{margin-top:0}
