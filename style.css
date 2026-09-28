@@ -40,3 +40,11 @@
 
 /* O filtro da home agora vem após as gestões exclusivas. */
 .exclusive-section + .search-wrap{margin-top:0}
+
+/* Link para a lista completa das gestões, sem alterar os demais cartões. */
+.exclusive-actions{display:flex;align-items:center;gap:22px;flex:none}
+.exclusive-actions .text-link{white-space:nowrap}
+.exclusive-actions .icon-arrow{margin-left:8px}
+.exclusive-page .pill{background:var(--ink);color:#fff}
+@media(max-width:850px){.exclusive-heading{align-items:start;flex-direction:column}.exclusive-actions{align-self:stretch;justify-content:space-between}}
+@media(max-width:600px){.exclusive-actions{margin-top:4px}}
